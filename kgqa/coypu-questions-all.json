@@ -1,0 +1,2464 @@
+{
+    "dataset": {
+        "id": "coypu-kg-questions-all"
+    },
+    "questions": [
+        {
+            "id": "0",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": true
+                }
+            ],
+            "question": [
+                {
+                    "string": "Does Tokyo have a sea port?",
+                    "language": "en"
+                },
+                {
+                    "string": "Hat Tokio einen Seehafen?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK { ?subject coy:hasLocation ?country; coy:hasInfrastructureType \"port\"; rdfs:label \"Tokyo\" . ?country rdf:type coy:Country; rdfs:label \"Japan\"@en.}"
+            }
+        },
+        {
+            "id": "1",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "87"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many sea ports are there in China?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Seehafen gibt es in China?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?port) AS ?result) WHERE {?port coy:hasLocation ?country ; coy:hasInfrastructureType \"port\" . ?country rdf:type coy:Country; skos:altLabel \"China\"@en}"
+            }
+        },
+        {
+            "id": "2",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Is there currently a natural disaster in Italy?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gibt es aktuell eine Naturkatastrophe in Italien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK {?result rdf:type coy:Disaster; coy:hasCountryLocation ?country; coy:hasStartDate ?sd. ?country rdfs:label \"Italy\"@en. FILTER(NOT EXISTS {?result coy:hasEndDate ?ed})} "
+            }
+        },
+        {
+            "id": "3",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "When was the last earthquake in Indonesia?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wann gab es das letzte Erdbeben in Indonesien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?subject rdf:type coy:Disaster; coy:hasEventType \"EQ\"; coy:hasCountryLocation ?country; coy:hasTimestamp ?result. ?country rdfs:label \"Indonesia\"@en} ORDER BY DESC(?result) LIMIT 1"
+            }
+        },
+        {
+            "id": "4",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is the international acronym of Saudi Arabia?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie lautet das internationale K\u00fcrzel von Saudi-Arabien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {<https://data.coypu.org/country/SAU> coy:hasIso3Code ?result .}"
+            }
+        },
+        {
+            "id": "5",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What are the last three natural disasters with level orange?",
+                    "language": "en"
+                },
+                {
+                    "string": "Welches sind die letzten drei Naturkatastrophen mit Level orange?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?result rdf:type coy:Disaster; coy:hasAlertScore ?as; coy:hasTimestamp ?ts. FILTER(?as = \"2\")} ORDER BY DESC(?ts) LIMIT 3"
+            }
+        },
+        {
+            "id": "6",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                                    "value": "3.92e0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is the risk level of Germany?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie ist das Risiko-Level von Deutschland?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE {<https://data.coypu.org/country/DEU> coy:hasRiskLevel ?result .}"
+            }
+        },
+        {
+            "id": "7",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many disasters happened in 2021 with level 1 or orange?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Krisen mit einer Warnmeldung 1 oder orange gab es 2021?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?dis) AS ?result) WHERE {?dis rdf:type coy:Disaster; coy:hasAlertScore ?as; coy:hasTimestamp ?ts. FILTER((YEAR(xsd:dateTime(?ts)) = 2021) && (?as = \"1\"))}"
+            }
+        },
+        {
+            "id": "8",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Is there an airport in Kandahar?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gibt es einen Flughafen in Kandahar?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK{?ap rdf:type coy:Airport; coy:hasCountry \"Afghanistan\"; coy:hasName ?name. FILTER(regex(?name,\"Kandahar\", \"i\"))}"
+            }
+        },
+        {
+            "id": "9",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "value": "LAX"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is the IATA Code of the International Airport in Los Angeles?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie ist der IATA Code f\u00fcr den Internationalen Flughafen von Los Angeles?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE{?ap rdf:type coy:Airport;  rdfs:label \"Los Angeles Intl\"; coy:hasId ?result. }"
+            }
+        },
+        {
+            "id": "10",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "1505"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many seaports are located in Europe?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Seeh\u00e4fen gibt es in Europa?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?seaport) AS ?result) WHERE {?seaport rdf:type coy:Port; coy:hasLocation ?country. ?country coy:hasContinent data:continent\\/Europe. }"
+            }
+        },
+        {
+            "id": "11",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#double",
+                                    "value": "8212.0e0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What capacity does the biggest powerplant in Japan have?",
+                    "language": "en"
+                },
+                {
+                    "string": "Welche Kapazit\u00e4t hat das gr\u00f6\u00dfte Kraftwerk in Japan?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?pp rdf:type coy:Powerplant;  coy:hasCountryLocation/rdfs:label \"Japan\"@en; coy:hasCapacity ?result} ORDER BY DESC(?result) LIMIT 1"
+            }
+        },
+        {
+            "id": "12",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What fuel types does the powerplant HKW West use?",
+                    "language": "en"
+                },
+                {
+                    "string": "Mit welchen Kraftstoffen wird das Kraftwerk HKW West betrieben?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?pp rdf:type coy:Powerplant;  coy:hasName \"HKW West\"; coy:hasFuelType ?result. }"
+            }
+        },
+        {
+            "id": "13",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "68"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many power plants in India work with gas?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Gas-Kraftwerke gibt es in Indien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?pp) AS ?result) WHERE{?pp rdf:type coy:Powerplant; coy:hasFuelType \"Gas\"; coy:hasCountryLocation/rdfs:label \"India\"@en. }"
+            }
+        },
+        {
+            "id": "14",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/emdat/2021-0411-CHE"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What was the most recent Disaster that struck in Switzerland?",
+                    "language": "en"
+                },
+                {
+                    "string": "Was war das letzte katastrophen Ereignis in der Schweiz?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?result rdf:type coy:Disaster; coy:hasStartDate ?sd; coy:hasCountryLocation/rdfs:label \"Switzerland\"@en.} ORDER BY DESC(?sd) LIMIT 1"
+            }
+        },
+        {
+            "id": "15",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "dis",
+                            "ts",
+                            "ts2"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Was there an active natural disaster in Japan on 2021-01-01?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gab es am 01.01.2021 in Japan eine Naturkatastrophe?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?dis ?ts ?ts2 WHERE{?dis rdf:type coy:Disaster; coy:hasCountryLocation/rdfs:label \"Japan\"@en; coy:hasTimestamp ?ts. BIND(xsd:date(?ts) AS ?eventDate)  FILTER(?eventDate = xsd:date(\"2021-01-01+00:00\"))}"
+            }
+        },
+        {
+            "id": "16",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many companies based in Cologne have more than 10000 employees?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Unternehmen in K\u00f6ln haben mehr als 10.000 Mitarbeiter?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?comp) AS ?result) WHERE{?comp rdf:type coy:Company; coy:hasCity \"K\u00f6ln\"; coy:hasNumberOfEmployees ?size. FILTER(xsd:integer(?size) > 10000)}"
+            }
+        },
+        {
+            "id": "17",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Are there more companies in Munich with a size of \"small\" than \"micro\"?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gibt es in M\u00fcnchen mehr Unternehmen der Gr\u00f6\u00dfe small als micro?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK{{SELECT (COUNT (DISTINCT ?comp) AS ?small) WHERE{?comp rdf:type coy:Company; coy:hasCity \"M\u00fcnchen\"; coy:hasCompanySize ?size. FILTER(?size = \"SMALL\")}} {SELECT (COUNT (DISTINCT ?comp) AS ?micro) WHERE{?comp rdf:type coy:Company; coy:hasCity \"M\u00fcnchen\"; coy:hasCompanySize ?size. FILTER(?size = \"MICRO\")}} FILTER(?small > ?micro)}"
+            }
+        },
+        {
+            "id": "18",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is the URL of the biggest company (by number of employees) based in Hamburg?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie lautet die URL des gr\u00f6\u00dften Unternehmens (nach Anzahl an Mitarbeitern) in Hamburg?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?comp rdf:type coy:Company; coy:hasCity \"Hamburg\"; coy:hasNumberOfEmployees ?size; coy:hasUrl ?result} ORDER BY DESC(xsd:integer(?size)) LIMIT 1"
+            }
+        },
+        {
+            "id": "19",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Get the EBID-Code of all companies with more than 100,000 employees.",
+                    "language": "en"
+                },
+                {
+                    "string": "Gib mir den EBID-Code von allen Unternehmen mit mehr als 100.000 Mitarbeitern.",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?comp rdf:type coy:Company; coy:hasEbidCode ?result; coy:hasNumberOfEmployees ?size.  FILTER(xsd:integer(?size) > 100000)}"
+            }
+        },
+        {
+            "id": "20",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is the street address of the Deutsche Bahn AG?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie lautet die Adresse der Deutsche Bahn AG?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?comp rdfs:label \"Deutsche Bahn AG\"; coy:hasStreet ?result.}"
+            }
+        },
+        {
+            "id": "21",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Which companies are in the area of the Zip Code 78604?",
+                    "language": "en"
+                },
+                {
+                    "string": "Welche Unternehmen gibt es im Bereich der Postleitzahl 78604?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE{?result rdf:type coy:Company; coy:hasZip \"78604\".} "
+            }
+        },
+        {
+            "id": "22",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "value": "Hydro"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Can Afghanistan create more energy through hydropower or thorugh solar power?",
+                    "language": "en"
+                },
+                {
+                    "string": "Kann in Afghanistan mehr Energie aus Wasserkraft oder Solarkraft erzeugt werden?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {{SELECT (SUM(xsd:float(?capS)) AS ?solarSum) WHERE{ ?solar rdf:type coy:Powerplant; coy:hasCountryLocation/rdfs:label \"Afghanistan\"@en; coy:hasFuelType \"Solar\"; coy:hasCapacity ?capS.}} {SELECT (SUM(xsd:float(?capH)) AS ?hydroSum) WHERE {?hydro rdf:type coy:Powerplant; coy:hasCountryLocation/rdfs:label \"Afghanistan\"@en; coy:hasFuelType \"Hydro\"; coy:hasCapacity ?capH. }} BIND(IF((?solarSum >= ?hydroSum), \"Solar\", \"Hydro\") AS ?result)}"
+            }
+        },
+        {
+            "id": "23",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many crises have happenend in Australia since the 2022-01-01?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Katastrophen gab es seit dem ersten Januar 2022 in Australien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?emergency) AS ?result) WHERE{ ?emergency rdf:type coy:Disaster; coy:hasTimestamp ?ts; coy:hasCountryLocation/rdfs:label \"Australia\"@en. FILTER(YEAR(xsd:dateTime(?ts)) >= 2022)}"
+            }
+        },
+        {
+            "id": "24",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Was there an crisis in 2021 that hit both Germany and the Netherlands at the same time?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gab es 2021 eine Notlage die Deutschland und die Niederlande betraf?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK{ ?emergency rdf:type coy:Disaster; coy:hasStartDate ?ts; coy:hasCountryLocation ?loc, ?loc2. ?loc rdf:type coy:Country; rdfs:label \"Germany\"@en. ?loc2 rdf:type coy:Country; skos:altLabel \"Netherlands\"@en. FILTER(YEAR(?ts) = 2021)}"
+            }
+        },
+        {
+            "id": "25",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "When was the latest piece of news about russia published on \"bloomberg.com\"?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wann gab es die neuesten Nachrichten \u00fcber Russland auf \"bloomberg.com\"?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE {?news rdf:type coy:News; coy:hasCountryLocation/rdfs:label \"Russia\"@en; coy:hasTimestamp ?result; coy:hasUrl ?url. FILTER(regex(?url, \"bloomberg.com\"))} ORDER BY DESC(?result) LIMIT 1"
+            }
+        },
+        {
+            "id": "26",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many micro companies are based in Germany?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Mikro-Unternehmen gibt es in Deutschland?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?micro) AS ?result) WHERE {?micro rdf:type coy:Company; coy:hasCountryLocation/rdfs:label \"Germany\"@en; coy:hasCompanySize \"MICRO\".}"
+            }
+        },
+        {
+            "id": "27",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Is there at least one Company in the \"Gotenstra\u00dfe\"?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gibt es mindestens ein Unternehmen in der \"Gotenstra\u00dfe\"?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK {?comp rdf:type coy:Company; coy:hasStreet ?street. FILTER(regex(?street,\"Gotenstra\u00dfe\"))}"
+            }
+        },
+        {
+            "id": "28",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Which country was plagued by the most disasters in 2021? ",
+                    "language": "en"
+                },
+                {
+                    "string": "Welches Land hatte die meisten Notlagen im Jahr 2021?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?dis rdf:type coy:Disaster; coy:hasTimestamp ?ts; coy:hasCountryLocation/rdfs:label ?result. FILTER(YEAR(xsd:dateTime(?ts)) = 2021) } GROUP BY(?result) ORDER BY DESC(COUNT (DISTINCT ?dis)) LIMIT 1"
+            }
+        },
+        {
+            "id": "29",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What was the latest piece of news relevant to Madagascar about?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wovon handelte die letzte Madagascar betreffende Nachricht?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?news rdf:type coy:News; coy:hasCountryLocation/rdfs:label \"Madagascar\"@en; coy:hasDescription ?result; coy:hasTimestamp ?ts.} ORDER BY DESC(xsd:dateTime(?ts)) LIMIT 1"
+            }
+        },
+        {
+            "id": "30",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many news items have been made about Ukraine in June of 2022?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Nachrichten behandelten die Ukraine im Juni 2022?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?news) AS ?result) WHERE {?news rdf:type coy:News; coy:hasCountryLocation/rdfs:label \"Ukraine\"@en; coy:hasTimestamp ?ts. FILTER((YEAR(xsd:dateTime(?ts)) = 2022) && (MONTH(xsd:dateTime(?ts)) = 06))} "
+            }
+        },
+        {
+            "id": "31",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "0"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many attacks with chemical weapons happened in Brazil in April of 2022?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Angrife mit chemischen Waffen passierten im April 2022 in Brazilien?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT(DISTINCT ?event) AS ?result) WHERE {?event rdf:type coy:ChemicalWeapon; coy:hasIsoCode ?iso; coy:hasTimestamp ?ts. ?country rdf:type coy:Country; rdfs:label \"Brazil\"@en; coy:hasIso3Code ?iso. FILTER((YEAR(?ts) = 2022) && (MONTH(?ts) = 04))} "
+            }
+        },
+        {
+            "id": "32",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "4"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many nuclear power plants are in Ukraine?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Atomkraftwerke gibt es in der Ukraine?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT (DISTINCT ?pp) AS ?result) WHERE {?pp rdf:type coy:Powerplant; coy:hasFuelType \"Nuclear\"; coy:hasCountryLocation/rdfs:label \"Ukraine\"@en}"
+            }
+        },
+        {
+            "id": "33",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "20"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many attacks happened in Kherson in 2022?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Attacken gab es 2022 in Cherson?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT (COUNT(DISTINCT ?attack) AS ?result) WHERE {?attack rdf:type coy:Attack; coy:hasLocation \"Kherson\"; coy:hasTimestamp ?ts. FILTER(YEAR(?ts)= 2022)}"
+            }
+        },
+        {
+            "id": "34",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871346"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869435"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869338"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870410"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870150"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869597"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8986664"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9179049"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871246"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870465"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869990"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870462"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9347530"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871342"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870433"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871263"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870706"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870559"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869373"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869896"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870303"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870481"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870463"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870444"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869976"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869595"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8887913"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870437"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870398"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871354"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870153"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870323"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870569"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9347529"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870503"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870797"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869915"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869476"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869585"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871326"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870825"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869594"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869425"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870670"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869908"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869418"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870474"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869394"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869398"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871220"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869570"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869485"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870011"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870388"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869481"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869584"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869320"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870467"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870446"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870012"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8987732"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8987557"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869524"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870367"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870431"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870342"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871216"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869531"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9485017"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869328"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869416"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869503"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870114"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869397"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8869886"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871253"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8986748"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870143"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870458"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9206999"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871352"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870338"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870455"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8984942"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8870968"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8871132"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Was Odesa attacked in 2020?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wurde Odessa in 2020 angegriffen?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?result rdf:type coy:Conflict;  coy:hasLocation \"Odesa\"; coy:hasTimestamp ?ts. FILTER(YEAR(?ts) = 2020)}"
+            }
+        },
+        {
+            "id": "35",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": true
+                }
+            ],
+            "question": [
+                {
+                    "string": "Were there military conflicts in Europe in 2021?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gab es in 2021 milit\u00e4rische Konflikte in Europa?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK {?result rdf:type coy:ArmedClash; coy:hasCountryLocation/coy:hasContinent data:continent\\/Europe; coy:hasTimestamp ?ts. FILTER(YEAR(?ts) = 2021)}"
+            }
+        },
+        {
+            "id": "36",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#long",
+                                    "value": "62695"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#long",
+                                    "value": "62670"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#long",
+                                    "value": "20800"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What are the indices of the 3 northernmost harbors in Europe?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie lauten die Indizes der drei n\u00f6rdlichsten H\u00e4fen in Europa?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE {?port rdf:type coy:Port; wpi:hasIndexNumber ?result; coy:hasLatitude ?lat; coy:hasLocation/coy:hasContinent data:continent\\/Europe.} ORDER BY DESC(?lat) LIMIT 3"
+            }
+        },
+        {
+            "id": "37",
+            "answers": [
+                {
+                    "head": {},
+                    "boolean": false
+                }
+            ],
+            "question": [
+                {
+                    "string": "Is there a UK company with more than 100,000 employees?",
+                    "language": "en"
+                },
+                {
+                    "string": "Gibt es in Gro\u00dfbritannien eine Firma mit mehr als 100.000 Mitarbeitern?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> ASK {?comp rdf:type coy:Company; coy:hasCountryLocation/rdfs:label \"United Kingdom\"@en; coy:hasNumberOfEmployees ?size. FILTER(xsd:integer(?size) >= 100000)}"
+            }
+        },
+        {
+            "id": "38",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": []
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What are the street adresses of companies in Germany with more than 100,000 employees?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie lauten die Adressen der Firmen in Deutschland mit mehr als 100.000 Mitarbeitern?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?comp rdf:type coy:Company; coy:hasCountryLocation/rdfs:label \"Germany\"@en; coy:hasNumberOfEmployees ?size; coy:hasStreet ?result. FILTER(xsd:integer(?size) >= 100000)}"
+            }
+        },
+        {
+            "id": "39",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8351214"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9189433"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728466"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8335260"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/4741740"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8751376"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9187476"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8322660"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8996248"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737846"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/5655429"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8995876"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/7024835"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8738017"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/5897848"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737553"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8739020"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6058908"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728432"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8338572"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8756060"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8344855"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8736961"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8757874"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8317762"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8350588"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/5897540"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8754534"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6302259"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8745337"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8321160"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737751"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9576323"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/4754059"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8325704"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8566278"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/4743208"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737796"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9188092"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8739083"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/7663428"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8347202"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9189765"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8738072"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6747025"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728610"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6080188"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9334618"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8347491"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/4744726"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8739620"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6729148"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8345682"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8331572"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8306665"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/7969896"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9023820"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8757421"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8334210"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8757727"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8757725"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737974"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9552436"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6029465"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8758032"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8739538"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6729402"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8757620"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728534"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/5208497"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8736954"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8345617"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9553966"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8738985"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8322103"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8758006"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8352335"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8754501"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8819991"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8322245"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/7263053"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/4753623"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8996117"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8738995"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8758421"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6250032"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8297179"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8306664"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8324454"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/9190325"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8758197"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728636"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8737832"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8062972"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8995986"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/7687081"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8738207"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/6728938"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/acled/8758340"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Which events involved chemical weapons since 2016?",
+                    "language": "en"
+                },
+                {
+                    "string": "In welchen Events wurden seit 2016 chemische Waffen eingesetzt?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?result rdf:type coy:ChemicalWeapon; coy:hasTimestamp ?ts. FILTER(YEAR(?ts) >= 2016)}"
+            }
+        },
+        {
+            "id": "40",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "literal",
+                                    "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+                                    "value": "9455"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "How many interventions against Russia are currently active?",
+                    "language": "en"
+                },
+                {
+                    "string": "Wie viele Interventionen richten sich aktuell gegen Russland?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT (COUNT (DISTINCT ?int) AS ?result) WHERE {?int rdf:type gta:Intervention; gta:hasAffectedJurisdiction/rdfs:label \"Russia\"@en}"
+            }
+        },
+        {
+            "id": "41",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/event/gta/64723/104854"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "What is Australia's most recent intervention against Russia?",
+                    "language": "en"
+                },
+                {
+                    "string": "Welches ist die aktuelleste Intervention von Australien gegen Russland?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT ?result WHERE {?result rdf:type gta:Intervention; gta:hasAffectedJurisdiction/rdfs:label \"Russia\"@en; gta:hasImplementingJurisdiction/rdfs:label \"Australia\"@en; gta:hasImplementationDate ?date.} ORDER BY DESC(?date) LIMIT 1"
+            }
+        },
+        {
+            "id": "42",
+            "answers": [
+                {
+                    "head": {
+                        "vars": [
+                            "result"
+                        ]
+                    },
+                    "results": {
+                        "bindings": [
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/classification/hs_2012/281810"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/classification/hs_2012/281830"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/classification/hs_2012/281820"
+                                }
+                            },
+                            {
+                                "result": {
+                                    "type": "uri",
+                                    "value": "https://data.coypu.org/classification/hs_2012/260600"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "question": [
+                {
+                    "string": "Which products are impacted by intervention 101975?",
+                    "language": "en"
+                },
+                {
+                    "string": "Welche Produkte sind von der Intervention 101975 betroffen?",
+                    "language": "de"
+                }
+            ],
+            "query": {
+                "sparql": "PREFIX coy: <https://schema.coypu.org/global#> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX data: <https://data.coypu.org/> PREFIX skos: <http://www.w3.org/2004/02/skos/core#> PREFIX geo: <http://www.opengis.net/ont/geosparql#> PREFIX wpi: <https://schema.coypu.org/world-port-index#> PREFIX wdt: <http://www.wikidata.org/prop/direct/> PREFIX wd: <http://www.wikidata.org/entity/> PREFIX em: <https://schema.coypu.org/em-dat#> PREFIX schema: <http://schema.org/> PREFIX gta:  <https://schema.coypu.org/gta#> SELECT DISTINCT ?result WHERE {?intervention rdf:type gta:Intervention; gta:hasInterventionId \"101975\"; gta:hasAffectedProduct ?result}"
+            }
+        }
+    ]
+}
